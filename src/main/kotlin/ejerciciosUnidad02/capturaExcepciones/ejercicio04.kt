@@ -1,0 +1,2 @@
+package org.example.ejerciciosUnidad02.capturaExcepciones
+
