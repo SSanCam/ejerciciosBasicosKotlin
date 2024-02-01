@@ -1,4 +1,4 @@
-package org.example.ejerciciosUnidad03.listasTuplas
+package ejerciciosUnidad03.listasTuplas
 
 /*Escribir un programa que pregunte al usuario los números ganadores de la lotería primitiva, los almacene en una lista
 y los muestre por pantalla ordenados de menor a mayor.*/
@@ -12,10 +12,9 @@ fun numsBoleto(): List<Int>{
 
         while (nums.size < 6){
             println("Numero> ")
-            var num = readln()
+            val num = readln().toIntOrNull()
 
             try {
-                val num = num.toInt()
                 if (num != null && num > 0 && num in 1..49 && num !in nums) {
                     nums.add(num)
                 } else {

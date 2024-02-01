@@ -1,2 +1,2 @@
-package org.example.ejerciciosUnidad03.conjuntos
+package ejerciciosUnidad03.conjuntos
 
