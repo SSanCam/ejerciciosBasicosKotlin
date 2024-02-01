@@ -32,12 +32,13 @@ fun main() {
         println("Fruta>")
         articulo = readln().uppercase()
 
-        if (articulo.uppercase() !in stock.keys) {
+        while (articulo.uppercase() !in stock.keys) {
             println("No disponemos de ese articulo.\nInténtalo de nuevo: ")
             articulo = readln().uppercase()
-        } else {
-            carrito.add(articulo)
         }
+
+        carrito.add(articulo)
+
         println("Quieres introducir otra fruta al carrito? S/N: ")
         val continuar = readln().uppercase()
 
