@@ -1,26 +1,26 @@
-package org.example.ejerciciosUnidad02.sentenciaIterativas
+package ejerciciosUnidad02.sentenciasIterativas
 
 /*Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la cuenta atrás
 desde ese número hasta cero separados por comas.
 */
 
-fun pedirNum(): Int{
+fun pedirNum(): Int {
 
     try {
         println("v")
         var num = readln()
 
-        while (num.toIntOrNull() == null){
+        while (num.toIntOrNull() == null) {
             println("Debes introducir un número entero.\nInténtalo de nuevo: ")
             num = readln()
         }
-        while (num.toInt() <= 0){
+        while (num.toInt() <= 0) {
             println("Introduce un número entero mayor que 0: ")
             num = readln()
         }
         return num.toInt()
 
-    }catch (e: NumberFormatException){
+    } catch (e: NumberFormatException) {
         println("ERROR - 404")
         return 0
     }

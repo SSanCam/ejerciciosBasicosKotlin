@@ -1,5 +1,7 @@
 package org.example.ejerciciosUnidad02.sentenciaIterativas
 
+import ejerciciosUnidad02.sentenciasIterativas.pedirNum
+
 /*Escribir un programa que muestre por pantalla la tabla de multiplicar del 1 al 10.*/
 
 fun multiplicar(num: Int): String {
