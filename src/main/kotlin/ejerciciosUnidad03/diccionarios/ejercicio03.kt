@@ -11,19 +11,19 @@ Manzana	0.80
 Pera	0.85
 Naranja	0.70
 */
-/*
-fun calcularPrecio(kilos: Double, precio: Double): Double{
 
+fun calcularPrecio(kilos: Double, precio: Double): Double {
+    return (kilos * precio)
 }
 
- */
+
 fun main() {
     val stock = mapOf("PLATANO" to 1.35, "MANZANA" to 0.80, "PERA" to 0.85, "NARANJA" to 0.70)
     val carrito = mutableListOf<String>()
     var articulo = ""
 
     println("En nuestra tienda puedes encontrar: ")
-    for (fruta in stock) {
+    for (fruta in stock.keys) {
         println(fruta)
     }
     var seguir = true
@@ -49,6 +49,17 @@ fun main() {
         } else {
             println("Debes introducir S o N: ")
         }
+
     }
-    //HEMOS SALIDO Y QUEREMOS CALCULAR EL TOTAL DEL CARRITO:
+    var totalCarrito = 0.0
+    for (fruta in carrito) {
+        println("Cuantos kilos de $fruta quieres?: ")
+        val kilos = readln().toDouble()
+
+        val precioUnitario = stock[fruta]
+        val precioTotalFruta = calcularPrecio(kilos, precioUnitario!!.toDouble())
+        totalCarrito += precioTotalFruta
+        println("Precio total por ${kilos}kg de $fruta: $precioTotalFruta")
+    }
+    println("El total del carrito es: $totalCarrito")
 }
