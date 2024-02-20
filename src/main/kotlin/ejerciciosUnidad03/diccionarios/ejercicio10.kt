@@ -83,7 +83,7 @@ fun mostrarClientes() {
         }
     }
 }
-
+g
 fun listarClientes() {
     println("El listado de los clientes: ")
     baseDeDatosClientes.forEach { (dni, datosClientes) ->
