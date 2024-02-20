@@ -1,4 +1,5 @@
 package ejerciciosUnidad03.diccionarios
+
 /*
 Escribir un programa que cree un diccionario de traducción español-inglés. El usuario introducirá las palabras en
 español e inglés separadas por dos puntos, y cada par <palabra>:<traducción> separados por comas. El programa debe
@@ -43,13 +44,11 @@ fun main() {
 
         if (palabra.trim() !in palabrasDiccionario) {
             println("Lo siento, '${palabra}' no se encuentra actualmente en nuestro diccionario.")
-        }else{
+        } else {
             val fraseTraducida = dicEspIng[palabra.trim()]
-
+            println("La traducción de '${fraseTraducir}' sería: '${fraseTraducida}'")
         }
-        println("La traducción de '${fraseTraducir}' sería: '${fraseTraducida}'")
     }
-
 }
 
 
