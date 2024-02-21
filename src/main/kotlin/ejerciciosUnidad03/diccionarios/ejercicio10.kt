@@ -83,7 +83,6 @@ fun mostrarClientes() {
         }
     }
 }
-g
 fun listarClientes() {
     println("El listado de los clientes: ")
     baseDeDatosClientes.forEach { (dni, datosClientes) ->
@@ -112,11 +111,74 @@ fun mostrarMenu() {
         opcion = readln().toInt()
 
         when (opcion) {
-            1 -> agregarCliente()
-            2 -> eliminarCliente()
-            3 -> mostrarClientes()
-            4 -> listarClientes()
-            5 -> listarPreferentes()
+            1 -> //agregarCliente()
+                {
+                println("Introduce el DNI del nuevo cliente: ")
+                val dni = readln()
+                println("Introduce tu nombre: ")
+                val nombre = readln()
+                println("Introduce tu direccion: ")
+                val direccion = readln()
+                println("Introduce tu número de teléfono: ")
+                val telefono = readln()
+                println("Es preferente? 'si' / 'no' : ")
+                var preferente = readlnOrNull().toBoolean()
+                if (preferente.toString().lowercase() == "si") {
+                    preferente = true
+                } else if (preferente.toString().lowercase() == "no") {
+                    preferente = false
+                }
+                val datosCliente = mutableMapOf<String, Any>()
+                datosCliente["nombre"] = nombre
+                datosCliente["direccion"] = direccion
+                datosCliente["telefono"] = telefono
+                datosCliente["preferente"] = preferente
+
+                baseDeDatosClientes[dni] = datosCliente
+                println("Cliente agregado correctamente.")
+            }
+            2 -> //eliminarCliente()
+            {
+                println("Introduce el DNI del cliente que deseas eliminar: ")
+                val dni = readlnOrNull().toString()
+
+                if (baseDeDatosClientes.containsKey(dni)) {
+                    baseDeDatosClientes.remove(dni)
+                    println("Cliente con DNI $dni eliminado de la base de datos.")
+                } else {
+                    println("No se encontró ningún cliente con el DNI $dni en la base de datos.")
+                }
+                println("Cliente eliminado correctamente.")
+            }
+            3 -> //mostrarClientes()
+            {
+                println("Introduce el dni del cliente que quieres mostrar: ")
+                val dni = readln()
+
+                if (baseDeDatosClientes.containsKey(dni)) {
+                    val cliente = baseDeDatosClientes[dni]
+                    println("Datos del cliente con DNI $dni:")
+                    cliente?.forEach { (key, value) ->
+                        println("$key: $value")
+                    }
+                }
+            }
+            4 -> //listarClientes()
+            {
+                println("El listado de los clientes: ")
+                baseDeDatosClientes.forEach { (dni, datosClientes) ->
+                    val nombre = datosClientes["nombre"]
+                    println("DNI: $dni - Nombre: $nombre")
+                }
+            }
+            5 -> //listarPreferentes()
+            {
+                println("Listado clientes preferentes: ")
+                baseDeDatosClientes.filterValues { it["preferente"] == true }.forEach { (dni, datosCliente) ->
+                    val nombre = datosCliente["nombre"]
+                    println("DNI: $dni - Nombre: $nombre")
+                }
+            }
             6 -> println("Saliendo del programa.")
             else -> println("Opción inválida.")
         }
