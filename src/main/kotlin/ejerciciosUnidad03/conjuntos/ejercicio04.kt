@@ -1,7 +1,6 @@
 package ejerciciosUnidad03.conjuntos
 /*
 Dadas las siguientes listas:
-
 frutas1 = ["manzana", "pera", "naranja", "plátano", "uva"]
 frutas2 = ["manzana", "pera", "durazno", "sandía", "uva"]
 Crea conjuntos a partir de estas listas y nómbralos set_frutas1 y set_frutas2.
