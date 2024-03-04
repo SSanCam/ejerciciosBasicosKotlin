@@ -13,17 +13,17 @@ Encuentra las frutas que están en frutas2 pero no en frutas1 y guárdalas en un
  */
 
 fun main() {
-
+    // Dos listas de fruta.
     val frutas1 = listOf("manzana", "pera", "naranja", "plátano", "uva")
     val frutas2 = listOf("manzana", "pera", "durazno", "sandía", "uva")
-
+    // Las convertimos a set
     val setFrutas1 = frutas1.toSet()
     val setFrutas2 = frutas2.toSet()
-
+    // Realizamos las separaciones que nos piden.
     val frutasComunes = setFrutas1.intersect(setFrutas2)
     val soloFrutasEn1 = setFrutas1.minus(frutas2)
     val soloFrutasEn2 = setFrutas2.minus(frutas1)
-
+    // Imprimimos las distintas informaciones
     println("Frutas del set 1: $setFrutas1")
     println("Frutas en el ser 2: $setFrutas2")
     println()
